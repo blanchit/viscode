@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>function</h1>
+    <h2>basic</h2>
+    <ul>
+        <script>
+            function two(){
+                document.write('<li>2-1</li>');
+                document.write('<li>2-2</li>');
+            }
+
+
+            document.write('<li>1</li>');
+            document.write('<li>2-1</li>');
+            document.write('<li>2-2</li>');
+            document.write('<li>3</li>');
+            two();
+        </script>
+    </ul>
+    <h2>Parameter & Argument</h2>
+    <script>
+        function onePlusOne(){
+            document.write(1+1+'<br>');
+        }
+        onePlusOne();
+        function sum(left,right){
+            document.write(left+right+'<br>');
+        }
+        function sumColorRed(left,right){
+            document.write('<div style="color:red;">'+left+right+'</div><br>');
+        }
+
+        sumColorRed(15,30);
+
+        sum(5,5);
+        sum(6,12);
+  
+    </script>
+    <h2>return</h2>
+</body>
+</html>

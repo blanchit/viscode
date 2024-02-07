@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function_28</title>
+    <script>
+        function nightDayHandler(){
+            var target = document.querySelector('body');
+            if(this.value==='night'){
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                this.value = 'day';
+
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i<alist.length){
+                    alist[i].style.color = 'powerblue';
+                    i = i + 1;
+                }
+            }else{
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                this.value = 'night';
+
+                var alist
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

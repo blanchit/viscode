@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slideContainer{border: 1px solid green; position: relative;
+                        width: 400px}
+        /* #slideContainer{overflow: hidden; width:400px; position: relative;} */
+        #slideList{width: 400px; }
+        .slideItem{display: none;}
+        .active{display: block;}
+
+        /* 버튼 디자인 */
+        .slideButton{position:absolute; top:50%;font-size: 20px;
+                    color: white;background-color: black; border:none;
+                    margin-top: -20px; }
+        #nextButton{right:0;}
+       
+    </style>
+</head>
+<body>
+    <h2>이미지 바꾸는 예제</h2>
+    <div id="slideContainer">
+        <div id="slideList">
+            <div class="slideItem active"><img src="no1.jpg" alt=""></div>
+            <div class="slideItem"><img src="no2.jpg" alt=""></div>
+            <div class="slideItem active"><img src="no3.jpg" alt=""></div>
+        </div>
+
+        <button id="prevButton" class="slideButton">&#10094</button>
+        <button id="nextButton" class="slideButton">&#10095</button>
+
+    </div>
+    <!-- 1. jq lib 임포트 -->
+    <script src="JS/jquery-3.7.1.min (1).js"></script>
+    <script>
+        //초기 인덱스값
+        var slideIndex = 1; //1 2 3
+
+        //버튼 이벤트
+        $(function(){
+            //prev버튼 연결
+            $('#prevButton').click(function(){
+                alert('이전이미지 보여줌')                
+            })
+            //next버튼 연결
+            $('#nextButton').click(function(){
+                alert('다음이미지 보여줌')
+
+                //이미지영역(slideItem) 모두 선택
+                alert($('.slideItem').length);
+                $('.slideItem').each(function(index, value){
+                    $(this).removeClass('active');
+                    console.log(index);
+                });
+
+                //다음 누루면 slideIndex 증가                
+                
+                $('.slideItem').each(function(index,value){ //0,1,2
+                    if(index==slideIndex){
+                        $(this).addClass('active');
+                    }
+                });                 
+                slideIndex++;
+                console.log(slideIndex);
+            });
+        })
+    </script>
+</body>
+</html>

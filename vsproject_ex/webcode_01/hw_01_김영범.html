@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>도서관 검색페이지</h2>
+    
+    <form action="/jspweb3/test.jsp" method="GET">
+        <table border="1" width="1000">
+            <tr align="left">
+                <th width="120">도서명</th>
+                <td colspan="3"><input type="text" size="120" value="" name="bookname" maxlength="50"></td>
+            </tr>
+            <tr align="left">
+                <th>출판사명</th>
+                <td colspan="3"><input type="text" size="120" value="" name="pubname"></td>
+            </tr>
+            <tr align="left">
+                <th>발행연도</th>
+                <td width="380">
+                    <select name="" id="">
+                    <option value="2000">2000년</option>
+                    <option value="2001">2001년</option>
+                    <option value="2002">2002년</option>
+                    <option value="2003">2003년</option>
+                    <option value="2004">2004년</option>
+                    <option value="2005">2005년</option>
+                    </select>
+                </td>
+                <th>저자 암호</th>
+                <td><input type="password" size="40" value="" name="password" maxlength="20"></td>
+            </tr align="left">
+            <tr align="left">
+                <th>도서이미지</th>
+                <td colspan="3"><input type="file" value="" name="bookimage"></td>
+            </tr>
+            <tr align="left">
+                <th>관련검색단어</th>
+                <td colspan="3">
+                    <input type="checkbox" value="Web" name="relword">웹표준
+                    <input type="checkbox" value="Ajax" name="relword">에이작스
+                    <input type="checkbox" value="JavaScript" name="relword">자바스크립트
+                    <input type="checkbox" value="HTML" name="relword">HTML
+                    <input type="checkbox" value="MySQL" name="relword" checked="checked">MySQL
+                </td>
+            </tr>
+            <tr align="left">
+                <th>보관 도서관</th>
+                <td colspan="3">
+                    <input type="radio" name="keeplib" value="1">도서관1
+                    <input type="radio" name="keeplib" value="2">도서관2
+                    <input type="radio" name="keeplib" value="3">도서관3
+                    <input type="radio" name="keeplib" value="4">도서관4
+                    <input type="radio" name="keeplib" value="5">도서관5
+                </td>
+            </tr>
+            <tr align="left">
+                <th>관련 제목</th>
+                <td colspan="3">
+                    <select name="" size="4" multiple="multiple">
+                        <option value="1">component_1</option>
+                        <option value="2">component_2</option>
+                        <option value="3">component_3</option>
+                        <option value="4">component_4</option>
+                        <option value="5">component_5</option>
+                        <option value="6">component_6</option>
+                    </select>
+                </td>
+            </tr>
+            <tr align="left">
+                <th>설명</th>
+                <td colspan="3">
+                    <textarea cols="120" rows="10"></textarea>
+                </td>
+            </tr>
+        </table>
+        <p><input type="submit" value="검색하기"> <input type="submit" value="취소하기"> <input type="submit" value="목록보기"></p>
+</form>
+</body>
+</html>

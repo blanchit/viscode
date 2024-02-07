@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>문제 1: 더 큰 수 찾기</h2>
+    <p>두 개의 숫자를 비교하여 큰 수를 출력하는 코드를 작성하세요</p>
+    <label for="number1">첫 번째 숫자:</label>
+    <input type="number" id="number1" name="number1" required>
+    <br>
+    <label for="number2">두 번째 숫자:</label>
+    <input type="number" id="number2" name="number2" required>
+    <br>
+    <button onclick="compareNumbers()">비교하기</button>
+    <div id="result"></div>
+    <script>
+        function compareNumbers() {
+            var num1 = parseFloat(document.getElementById("number1").value);
+            var num2 = parseFloat(document.getElementById("number2").value);
+            // 비교하여 큰 수 출력
+            if (!isNaN(num1) && !isNaN(num2)) {
+                var result = num1 > num2 ? num1 : num2;
+                document.getElementById("result").innerHTML = "큰 수: " + result;
+            } else {
+                alert("숫자를 입력하시오");
+            }
+        }
+    </script>
+        <h2>문제 2:1부터 10까지의 짝수 출력</h2>
+        <div id="evenNumbers"></div>
+        <script>
+            // 짝수 출력 함수
+            function printEvenNumbers() {
+                var evenNumbers = [];
+                for (var i = 1; i <= 10; i++) {
+                    if (i % 2 === 0) {
+                        evenNumbers.push(i);
+                    }
+                }
+                // 배열의 내용을 문자열로 변환하여 출력
+                document.getElementById("evenNumbers").innerHTML = "짝수: " + evenNumbers.join(", ");
+            }
+            // 페이지 로드 시 짝수 출력 함수 호출
+            printEvenNumbers();
+    </script>
+    <h2>문제 3: 1부터 10까지의 홀수의 합 출력</h2>
+    <div id="sumOdd"></div>
+    <script>
+        // 홀수의 합 출력 함수
+        function printSumOdd() {
+            var sumOdd = 0;
+            for (var i = 1; i <= 10; i++) {
+                if (i % 2 !== 0) {
+                    sumOdd += i;
+                }
+            }
+            // 화면에 출력
+            document.getElementById("sumOdd").innerHTML = "홀수의 합: " + sumOdd;
+        }
+        // 페이지 로드 시 홀수의 합 출력 함수 호출
+        printSumOdd();
+    </script>   
+        <h2>문제 4: 2단부터 4단까지의 구구단 출력</h2>
+        <div id="multiplicationTable"></div>
+        <script>
+            // 구구단 출력 함수
+            function printMultiplicationTable() {
+                var result = "<ul>";
+                for (var i = 2; i <= 4; i++) {
+                    result += "<li>" + i + "단<ul>";
+                    for (var j = 1; j <= 9; j++) {
+                        result += "<li>" + i + " * " + j + " = " + (i * j) + "</li>";
+                    }
+                    result += "</ul></li>";
+                }
+                result += "</ul>";
+                // 화면에 출력
+                document.getElementById("multiplicationTable").innerHTML = result;
+            }
+            // 페이지 로드 시 구구단 출력 함수 호출
+            printMultiplicationTable();
+        </script> 
+    <h2>문제 5: 주어진 숫자의 팩토리얼 계산</h2>
+    <label for="number">숫자 입력:</label>
+    <input type="number" id="number" name="number" required>
+    <br>
+    <button onclick="calculateFactorial()">계산하기</button>
+    <div id="result"></div>
+    <script>
+        // 팩토리얼 계산 함수
+        function calculateFactorial() {
+            var inputNumber = parseInt(document.getElementById("number").value);
+            if (!isNaN(inputNumber) && inputNumber >= 0) {
+                var result = 1;
+                for (var i = 1; i <= inputNumber; i++) {
+                    result *= i;
+                }
+                // 화면에 출력
+                document.getElementById("result").innerHTML = inputNumber + "의 팩토리얼: " + result;
+            } else {
+                alert("올바른 숫자를 입력하세요.");
+            }
+        }
+    </script>
+</body>
+</html>

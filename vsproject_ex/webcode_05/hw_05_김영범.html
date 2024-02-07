@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw_05</title>
+    <style>
+        #slideContainer{border: 1px solid green; position: absolute;
+                        width: 400px; height: 300px;}
+        /* #slideContainer{overflow: hidden; width:400px; position: relative;} */
+        #slideList{width: 400px; }
+        .slideItem{display: none;}
+        .active{display: block;}
+
+        /* 버튼 디자인 */
+        .slideButton{position:absolute; top:50%;font-size: 20px;
+                    color: white;background-color: black; border:none;
+                    margin-top: -20px; }
+        #nextButton{right:0;}
+       
+    </style>
+
+</head>
+<body>
+    <h2>이미지 바꾸는 예제</h2>
+    
+    <div id="slideContainer">
+
+        <button id="prevButton" class="slideButton" onclick="changeImage()">
+            &#10094;</button>          <!-- &#10094:next화살표 -->
+        <button id="nextButton" class="slideButton" onclick="changeImage()">
+            &#10095;</button>          <!-- &#10095:prev화살표 -->   
+
+    </div>
+
+    <img src="no1.jpg" alt="사진" id="imagePic">
+    <br>   
+
+    <script>
+        var number = 1;         
+        // 이미지 요소 찾기
+        var imagePic = document.getElementById('imagePic');
+
+        function changeImage() {
+            // 다음 이미지 인덱스로 변경
+            if (number < 3) {
+                number++;    // 1 -> 2
+            } else {
+                number = 1;
+            }
+            // 현재 인덱스에 해당하는 이미지 경로 설정
+            if (number === 1) {
+                imagePic.src = 'no1.jpg';
+            } else if (number === 2) {
+                imagePic.src = 'no2.jpg';
+            } else if (number === 3) {
+                imagePic.src = 'no3.jpg';
+            }        
+        }
+    </script>
+ 
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>회원가입-validation체크</h2>
+
+    <form action="">
+        <p><input type="text" name="" id="username" placeholder="아이디"></p>
+        <p><input type="password" name="" id="password"
+        placeholder="비밀번호"></p>
+        
+        <p><input type="password" name="" id="confirmPassword" 
+                        placeholder="비밀번호확인"></p>
+        <p><input type="text" name="" id="email" placeholder="이메일"></p>
+        <p><input type="button" value="회원가입" onclick="test()" id=""></p>
+    </form>
+
+    <script>
+        function test() {
+            var nam = document.getElementById('username').value;
+            var pass1 = document.getElementById('password').value;
+            var pass2 = document.getElementById('confirmPassword').value;
+
+            if (nam === '' || pass1 === '') {
+            alert('아이디와 비밀번호를 모두 입력하세요.');
+            return;
+            }
+
+            
+            if(nam.length <6){
+                alert("아이디는 6글자 이상이어야 합니다");
+                return fales;
+            }
+
+            if( pass1 != pass2 ) {
+                alert("비밀번호가 일치 하지 않습니다");
+                return false;
+            } else{
+                alert("비밀번호가 일치합니다");
+                return true;
+            }
+          
+    }
+
+    </script>
+</body>
+</html>

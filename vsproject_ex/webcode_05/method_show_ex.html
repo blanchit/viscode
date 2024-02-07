@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>jq show(), hide() 함수로 구현</h2>
+    <input type="button" value="이미지 보이기" id="showButton">
+    <input type="button" value="이미지 숨기기" id="hideButton">
+
+    <p>
+        <img src="car.png" alt="" id="sampleImage">
+    </p>
+    <!-- 1. jq lib 임포트 -->
+    <script src="JS/jquery-3.7.1.min (1).js"></script>
+
+    <!-- 2. 이미지 숨기는 버튼 이벤트 -->
+
+    <script>
+        // $(function(){  })
+        $(document).ready(function(){
+            $('#hideButton').click(function(){
+                $('#sampleImage').hide();
+            })
+        });
+        $(document).ready(function(){
+            $('#showButton').click(function(){
+                $('#sampleImage').show();
+            })
+        });
+
+        
+     </script>
+</body>
+</html>
